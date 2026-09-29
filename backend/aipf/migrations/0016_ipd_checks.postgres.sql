@@ -1,0 +1,7 @@
+ALTER TABLE admissions DROP CONSTRAINT IF EXISTS admissions_status_check;
+ALTER TABLE admissions ADD CONSTRAINT admissions_status_check
+  CHECK (status IN ('REQUESTED', 'ADMITTED', 'DISCHARGE_PENDING', 'DISCHARGED', 'CANCELLED'));
+
+ALTER TABLE beds DROP CONSTRAINT IF EXISTS beds_status_check;
+ALTER TABLE beds ADD CONSTRAINT beds_status_check
+  CHECK (status IN ('AVAILABLE', 'OCCUPIED', 'RESERVED', 'MAINTENANCE', 'BLOCKED', 'CLEANING'));

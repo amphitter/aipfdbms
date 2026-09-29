@@ -1,0 +1,4 @@
+Migration v99 (intentional failure) failed. The version was not recorded.
+SyntaxError: syntax error at or near "THIS"
+LINE 1: THIS IS NOT VALID SQL
+        ^

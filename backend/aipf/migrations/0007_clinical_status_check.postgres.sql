@@ -1,0 +1,9 @@
+ALTER TABLE queue_entries ADD CONSTRAINT queue_status_check CHECK (
+  status IN (
+    'WAITING', 'CALLED', 'IN_CONSULTATION', 'WAITING_FOR_TEST',
+    'WAITING_FOR_PHARMACY', 'WAITING_FOR_BILL', 'COMPLETED', 'CANCELLED'
+  )
+);
+ALTER TABLE encounters ADD CONSTRAINT encounter_status_check CHECK (
+  status IN ('OPEN', 'COMPLETED', 'CANCELLED')
+);
